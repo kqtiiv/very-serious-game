@@ -34,6 +34,9 @@ public class Cat : MonoBehaviour
     [Header("Attack Motion")]
     [SerializeField] private float attackRiseHeight = 0.4f;
     [SerializeField] private float attackDropHeight = -0.25f;
+    [Header("Damage")]
+    [SerializeField] private GameObject biteHitbox;
+    [SerializeField] private float biteActiveDuration = 0.08f;
 
     private int currentTimelineIndex;
     private Lane currentLane = Lane.Middle;
@@ -50,6 +53,7 @@ public class Cat : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        biteHitbox.SetActive(false);
     }
 
     private void Start()
@@ -160,9 +164,6 @@ public class Cat : MonoBehaviour
 
         yield return LerpAttackOffset(0f, attackRiseHeight, riseTime);
         yield return LerpAttackOffset(attackRiseHeight, attackDropHeight, dropTime);
-
-        OnBite();
-
         yield return LerpAttackOffset(attackDropHeight, 0f, recoveryTime);
 
         attackOffsetY = 0f;
@@ -206,5 +207,16 @@ public class Cat : MonoBehaviour
     public void OnBite()
     {
         Debug.Log($"Bite hit at: {GetSongTime()} seconds, lane: {currentLane}");
+        StartCoroutine(ActivateBiteHitbox());
+    }
+
+    private IEnumerator ActivateBiteHitbox()
+    {
+        if (biteHitbox == null)
+            yield break;
+
+        biteHitbox.SetActive(true);
+        yield return new WaitForSeconds(biteActiveDuration);
+        biteHitbox.SetActive(false);
     }
 }
