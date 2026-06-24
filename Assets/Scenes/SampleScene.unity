@@ -943,6 +943,15 @@ MonoBehaviour:
   - time: 5
     lane: 0
     bite: 1
+  - time: 5.5
+    lane: 1
+    bite: 1
+  - time: 6
+    lane: 0
+    bite: 1
+  - time: 7
+    lane: 2
+    bite: 1
   lanePositions:
   - {fileID: 677323655}
   - {fileID: 1578551296}
