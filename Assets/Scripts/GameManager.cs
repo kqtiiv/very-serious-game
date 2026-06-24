@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float endIntensity = 0.5f;
 
     private int lastDisplayedMinutes = -1;
-
+    
     private void Start()
     {
         UpdateClock();
