@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnMove(InputValue val)
     {
+        // if (isRolling) return;
         float x = val.Get<Vector2>().x;
         if (x > 0.5f)
             TryRoll(1);

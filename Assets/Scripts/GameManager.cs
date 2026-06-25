@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float currentTime = 3f;
     [SerializeField] private float endTime = 7f;
 
-    [Tooltip("How many real seconds it takes to go from 3:00 to 6:00")]
-    [SerializeField] private float realSecondsToFinish = 180f;
+    private float realSecondsToFinish = 180f;
 
     [SerializeField] private SpriteRenderer[] clockDigits = new SpriteRenderer[4];
 
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
+        realSecondsToFinish = FindFirstObjectByType<MusicManager>().song.length;
         UpdateClock();
     }
 

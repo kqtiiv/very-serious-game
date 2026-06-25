@@ -1,0 +1,62 @@
+0.0 setactive false
+70.0 setactive true
+72.0 R bite
+73.0 R bite
+74.0 R bite
+75.0 R bite
+77.0 L bite
+78.0 L bite
+79.0 L bite
+80.0 L bite
+81.0 L bite
+82.0 L bite
+83.0 L bite
+84.0 L bite
+
+86.0 R sweep
+88.0 M bite
+89.0 M bite
+90.0 M bite
+91.0 M bite
+92.0 M bite
+
+95.0 R sweep
+
+97.0 L sweep
+99.0 M bite
+100.0 M bite
+101.0 M bite
+
+104.0 L sweep
+108 L sweep
+111.5 L sweep
+
+111.6 setactive true
+
+113.0 L move
+114.0 L bite
+115.0 M move
+116.0 M bite
+117.0 L move
+118.0 L bite
+119.0 M move
+120.0 M bite
+
+121.0 L move
+122.0 L bite
+123.0 M bite
+124.0 M bite
+125.0 L move
+126.0 L bite
+
+127.0 L move
+128.0 L move
+129.0 M move
+130.0 R move
+131.0 M move
+132.0 L move
+133.0 M move
+134.0 R move
+
+136.0 M move
+137.0 setactive false

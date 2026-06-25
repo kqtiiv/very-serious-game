@@ -12,7 +12,7 @@ public class HeartUI : MonoBehaviour
         {
             Animator heartAnimator = hearts[i].GetComponent<Animator>();
 
-            if (i < currentHealth)
+            if (hearts.Length - i <= currentHealth)
             {
                 hearts[i].enabled = true;
             }
