@@ -35,7 +35,7 @@ public class Cat : MonoBehaviour
     [SerializeField] private float sweepDropHeight = -1f;
     [SerializeField] private float sweepExtraDist = 1f;
 
-    private MusicManager musicManager;
+    private AudioManager audioManager;
     private CatAction[] timeline;
     private int currentTimelineIndex;
     private Lane currentLane = Lane.Middle;
@@ -53,14 +53,14 @@ public class Cat : MonoBehaviour
 
     private void Start()
     {
-        musicManager = FindFirstObjectByType<MusicManager>();
+        audioManager = FindFirstObjectByType<AudioManager>();
         if (animator == null) animator = GetComponent<Animator>();
         LoadChart();
         MoveToLaneInstant(currentLane);
         // Jump to current beat in timeline
         for (int i = 0; i < timeline.Length; i++)
         {
-            if (timeline[i].beat > musicManager.CurrentBeat)
+            if (timeline[i].beat > audioManager.CurrentBeat)
             {
                 currentTimelineIndex = i;
                 break;
@@ -70,14 +70,14 @@ public class Cat : MonoBehaviour
 
     private void Update()
     {
-        if (musicManager == null || timeline == null || currentTimelineIndex >= timeline.Length || isBusy)
+        if (audioManager == null || timeline == null || currentTimelineIndex >= timeline.Length || isBusy)
             return;
 
         CatAction action = timeline[currentTimelineIndex];
 
         if (action.type == ActionType.SetActive)
         {
-            if (musicManager.CurrentBeat >= action.beat)
+            if (audioManager.CurrentBeat >= action.beat)
             {
                 currentTimelineIndex++;
                 SetCatVisible(action.active);
@@ -99,7 +99,7 @@ public class Cat : MonoBehaviour
 
         float beatToStart = action.beat - moveDurationBeats - hitDelayBeats;
 
-        if (musicManager.CurrentBeat >= beatToStart)
+        if (audioManager.CurrentBeat >= beatToStart)
         {
             currentTimelineIndex++;
             StartCoroutine(DoAction(action, moveDurationBeats, attackDurationBeats));
@@ -119,12 +119,12 @@ public class Cat : MonoBehaviour
 
         isBusy = true;
         
-        yield return MoveToLane(action.lane, musicManager.BeatToSeconds(moveDurationBeats), action.type == ActionType.Sweep);
+        yield return MoveToLane(action.lane, audioManager.BeatToSeconds(moveDurationBeats), action.type == ActionType.Sweep);
 
         if (action.type == ActionType.Bite)
-            yield return BiteAttack(musicManager.BeatToSeconds(attackDurationBeats));
+            yield return BiteAttack(audioManager.BeatToSeconds(attackDurationBeats));
         else if (action.type == ActionType.Sweep)
-            yield return SweepAttack(action.lane, musicManager.BeatToSeconds(attackDurationBeats), transform.position);
+            yield return SweepAttack(action.lane, audioManager.BeatToSeconds(attackDurationBeats), transform.position);
 
         isBusy = false;
     }
@@ -387,7 +387,7 @@ public class Cat : MonoBehaviour
 
     public void OnBite()
     {
-        Debug.Log($"Bite hit at beat time: {musicManager.CurrentBeat}, lane: {currentLane}");
+        Debug.Log($"Bite hit at beat time: {audioManager.CurrentBeat}, lane: {currentLane}");
         StartCoroutine(ActivateBiteHitbox());
     }
 
