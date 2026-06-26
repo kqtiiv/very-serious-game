@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string rollLeftTrigger = "RollLeft";
     [SerializeField] private string rollRightTrigger = "RollRight";
     [SerializeField] private AnimationClip rollAnimation;
+    [Header("Sound Effects")]
+    public AudioClip roll;
     private float rollAnimationLength => rollAnimation != null ? rollAnimation.length : 0f;
 
     private bool isRolling;
@@ -65,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         rollTargetPosition = bedPositions[currentPositionIndex].position;
         rollTimer = 0f;
         isRolling = true;
-
+        // AudioManager.Instance.PlaySFX(roll);
         StartRollAnimation(direction);
     }
 

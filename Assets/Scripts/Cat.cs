@@ -35,6 +35,10 @@ public class Cat : MonoBehaviour
     [SerializeField] private float sweepDropHeight = -1f;
     [SerializeField] private float sweepExtraDist = 1f;
 
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip biteSound;
+    [SerializeField] private AudioClip sweepSound;
+
     private AudioManager audioManager;
     private CatAction[] timeline;
     private int currentTimelineIndex;
@@ -167,6 +171,7 @@ public class Cat : MonoBehaviour
 
         float anticipationTime = duration * biteAnticipationPercent;
         float recoveryTime = duration - anticipationTime;
+        AudioManager.Instance.PlaySFX(biteSound);
 
         yield return LerpAttackOffset(0f, attackDropHeight, anticipationTime);
         yield return LerpAttackOffset(attackDropHeight, 0f, recoveryTime);
@@ -200,7 +205,7 @@ public class Cat : MonoBehaviour
         yield return new WaitForSeconds(duration * 0.15f);
 
         if (biteHitbox != null) biteHitbox.SetActive(true);
-
+        AudioManager.Instance.PlaySFX(sweepSound);
         yield return LerpBasePosition(start, end, sweepDuration);
 
         if (biteHitbox != null) biteHitbox.SetActive(false);
