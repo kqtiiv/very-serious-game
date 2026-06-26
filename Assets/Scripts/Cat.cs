@@ -53,7 +53,7 @@ public class Cat : MonoBehaviour
 
     private void Start()
     {
-        audioManager = FindFirstObjectByType<AudioManager>();
+        audioManager = AudioManager.Instance;
         if (animator == null) animator = GetComponent<Animator>();
         LoadChart();
         MoveToLaneInstant(currentLane);

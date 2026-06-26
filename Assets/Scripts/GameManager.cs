@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        realSecondsToFinish = FindFirstObjectByType<AudioManager>().song.length;
+        realSecondsToFinish = AudioManager.Instance.SongLength;
         UpdateClock();
     }
 
