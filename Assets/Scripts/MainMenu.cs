@@ -9,14 +9,25 @@ public class MainMenu : MonoBehaviour
     [Header("Stages (in order)")]
     [SerializeField] private string[] stageScenes;
 
+    [Header("Scenes")]
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
+
     public void OnStart()
     {
+        Debug.Log("Starting...");
         AudioManager.Instance.PlaySFX(buttonClick);
-        TransitionManager.Instance.LoadSceneWithTransition(GetFurthestScene());
+        SceneTransitioner.Instance.LoadSceneWithTransition(GetFurthestScene());
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Debug.Log("Returnng to main menu");
+        SceneTransitioner.Instance.LoadSceneWithTransition(mainMenuSceneName);
     }
 
     public void OnExit()
     {
+        Debug.Log("Quitting...");
         Application.Quit();
     }
 
