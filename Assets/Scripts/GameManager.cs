@@ -6,7 +6,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float currentTime = 3f;
     [SerializeField] private float endTime = 7f;
 
+    [Header("Stage")]
+    [SerializeField] private int stageIndex = 0;
+    [SerializeField] private string nextSceneName = "";
+
     private float realSecondsToFinish = 180f;
+    private bool gameEnded = false;
 
     [SerializeField] private SpriteRenderer[] clockDigits = new SpriteRenderer[4];
 
@@ -19,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float endIntensity = 0.5f;
 
     private int lastDisplayedMinutes = -1;
-    
+
     private void Start()
     {
         realSecondsToFinish = FindFirstObjectByType<MusicManager>().song.length;
@@ -28,8 +33,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentTime >= endTime)
+        if (gameEnded)
             return;
+
+        if (currentTime >= endTime)
+        {
+            Victory();
+            return;
+        }
 
         float hoursPerSecond = (endTime - 3f) / realSecondsToFinish;
 
@@ -40,6 +51,29 @@ public class GameManager : MonoBehaviour
         float t = Mathf.InverseLerp(3f, endTime, currentTime);
 
         roomLight.intensity = Mathf.Lerp(startIntensity, endIntensity, t);
+    }
+
+    public void Victory()
+    {
+        if (gameEnded) return;
+        gameEnded = true;
+
+        // save so player doesnt have to start again if died
+        PlayerPrefs.SetInt("StageUnlocked_" + (stageIndex + 1), 1);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Stage {stageIndex + 1} unlocked");
+
+        if (!string.IsNullOrEmpty(nextSceneName))
+            SceneTransitioner.Instance.LoadSceneWithTransition(nextSceneName);
+    }
+
+    public void GameOver()
+    {
+        if (gameEnded) return;
+        gameEnded = true;
+
+        SceneTransitioner.Instance.LoadSceneWithTransition("GameOver");
     }
 
     private void UpdateClock()

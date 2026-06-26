@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private HeartUI heartUI;
 
+    [SerializeField] private GameManager gameManager;
+
     private int currentHealth;
 
     public int CurrentHealth => currentHealth;
@@ -31,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player died");
+            if (gameManager != null)
+            {
+                gameManager.GameOver();
+            }
         }
     }
 }
