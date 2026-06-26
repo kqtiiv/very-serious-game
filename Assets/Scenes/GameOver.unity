@@ -574,74 +574,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1965493659
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1965493661}
-  - component: {fileID: 1965493660}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1965493660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965493659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 310e60e15344155499674742fbc22e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  currentTime: 3
-  endTime: 7
-  stageIndex: 1
-  nextSceneName: Cutscene1
-  clockDigits:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  digitSprites:
-  - {fileID: 21300000, guid: 736c287263f9b1d409335ed73a6bb568, type: 3}
-  - {fileID: 21300000, guid: 0895a0a59fd438e4caf009301ba80563, type: 3}
-  - {fileID: 21300000, guid: c5bfe5cd45512784b97f4fc5c9aa4274, type: 3}
-  - {fileID: 21300000, guid: 143ffd925d068b94c9cf8a263b38713f, type: 3}
-  - {fileID: 21300000, guid: 2cd26021dab63b64db0f1ba693ba04a6, type: 3}
-  - {fileID: 21300000, guid: f28b574409673da42b26e84c3d1a6a5b, type: 3}
-  - {fileID: 21300000, guid: 91a94e2ab0cb4754190f134da17ee2ab, type: 3}
-  - {fileID: 21300000, guid: 17a409099acfb5444a7031fa95aa29f3, type: 3}
-  - {fileID: 21300000, guid: dbaa13ee60dade5418446c0d23f84877, type: 3}
-  - {fileID: 21300000, guid: d50dc3987db94cd45ab9154bb2b9eae7, type: 3}
-  skyController: {fileID: 0}
-  roomLight: {fileID: 0}
-  startIntensity: 0
-  endIntensity: 0.7
---- !u!4 &1965493661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965493659}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.36889, y: -0.97658, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119504509
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   startBeat: 0
-  song: {fileID: 8300000, guid: aea67208a63d0c547983820534761b60, type: 3}
+  song: {fileID: 8300000, guid: f0043ba19e866324e8d0e8a765c2e2c3, type: 3}
   bpm: 130
   startDelay: 1
 --- !u!4 &2119504512
@@ -797,4 +729,3 @@ SceneRoots:
   - {fileID: 861111291}
   - {fileID: 2119504512}
   - {fileID: 1384972925}
-  - {fileID: 1965493661}
