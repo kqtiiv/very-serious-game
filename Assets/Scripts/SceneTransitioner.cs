@@ -26,7 +26,8 @@ public class SceneTransitioner : MonoBehaviour
 
     private void Start()
     {
-        screenHeight = curtain.rect.height;
+        Canvas.ForceUpdateCanvases();
+        screenHeight = curtain.GetComponentInParent<Canvas>().GetComponent<RectTransform>().rect.height;
         curtain.anchoredPosition = new Vector2(0, screenHeight);
     }
 
@@ -39,7 +40,7 @@ public class SceneTransitioner : MonoBehaviour
     {
         yield return StartCoroutine(SlideCurtain(0));
         SceneManager.LoadScene(sceneName);
-        yield return new WaitForSeconds(waitBetweenScene);
+        yield return new WaitForSecondsRealtime(waitBetweenScene);
         yield return StartCoroutine(SlideCurtain(screenHeight));
     }
 
@@ -48,7 +49,7 @@ public class SceneTransitioner : MonoBehaviour
         while (Mathf.Abs(curtain.anchoredPosition.y - targetY) > 50f)
         {
             float direction = Mathf.Sign(targetY - curtain.anchoredPosition.y);
-            curtain.anchoredPosition += Vector2.up * direction * slideSpeed * Time.deltaTime;
+            curtain.anchoredPosition += Vector2.up * direction * slideSpeed * Time.unscaledDeltaTime;
             yield return null;
         }
 

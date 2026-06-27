@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321466972
@@ -370,8 +370,8 @@ GameObject:
   m_Component:
   - component: {fileID: 360733803}
   - component: {fileID: 360733802}
-  - component: {fileID: 360733805}
-  - component: {fileID: 360733804}
+  - component: {fileID: 360733807}
+  - component: {fileID: 360733806}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -403,7 +403,7 @@ PlayableDirector:
   - key: {fileID: 569757827081772673, guid: f321f66aacfeb9d4588fe3cb91bfdcc7, type: 2}
     value: {fileID: 1000196068}
   - key: {fileID: 2535977669120528445, guid: f321f66aacfeb9d4588fe3cb91bfdcc7, type: 2}
-    value: {fileID: 360733804}
+    value: {fileID: 0}
   - key: {fileID: -5135370530699434784, guid: f321f66aacfeb9d4588fe3cb91bfdcc7, type: 2}
     value: {fileID: 1742863547}
   - key: {fileID: -7236080637623181761, guid: f321f66aacfeb9d4588fe3cb91bfdcc7, type: 2}
@@ -429,7 +429,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &360733804
+--- !u!114 &360733806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,7 +447,7 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 360733805}
+        - m_Target: {fileID: 360733807}
           m_TargetAssemblyTypeName: Transition, Assembly-CSharp
           m_MethodName: GoTo
           m_Mode: 5
@@ -459,7 +459,7 @@ MonoBehaviour:
             m_StringArgument: Stage2
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &360733805
+--- !u!114 &360733807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &627242008
@@ -829,7 +829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &730592995
@@ -931,7 +931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &840337353
@@ -1097,7 +1097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1327173965
@@ -1290,57 +1290,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1130391750356292794, guid: 1773cbf78dfdddf42a838ebbfc6daf07, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1595087973}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1773cbf78dfdddf42a838ebbfc6daf07, type: 3}
---- !u!1 &1595087972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1130391750356292794, guid: 1773cbf78dfdddf42a838ebbfc6daf07, type: 3}
-  m_PrefabInstance: {fileID: 1595087971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1595087973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595087972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 009b4b82d344c0f43ae407e6420a8b24, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1595087974}
-          m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-          m_MethodName: LoadSceneWithTransition
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Stage2
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1595087974 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6208362714985685288, guid: 1773cbf78dfdddf42a838ebbfc6daf07, type: 3}
-  m_PrefabInstance: {fileID: 1595087971}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595087972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: accfc026fa92c924ca786819a67ec5fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTransitioner
 --- !u!1 &1742863545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 421.07, y: 400}
   m_SizeDelta: {x: 1920, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1742863547

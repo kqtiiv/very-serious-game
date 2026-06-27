@@ -74,7 +74,7 @@ public class Cat : MonoBehaviour
 
     private void Update()
     {
-        if (audioManager == null || timeline == null || currentTimelineIndex >= timeline.Length || isBusy)
+        if (audioManager == null || isBusy)
             return;
 
         CatAction action = timeline[currentTimelineIndex];

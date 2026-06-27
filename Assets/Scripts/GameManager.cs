@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,6 +54,10 @@ public class GameManager : MonoBehaviour
         float t = Mathf.InverseLerp(3f, endTime, currentTime);
 
         roomLight.intensity = Mathf.Lerp(startIntensity, endIntensity, t);
+
+        // DEBUGGING
+        // if (Keyboard.current.wKey.wasPressedThisFrame)
+        //     DebugWin();
     }
 
     public IEnumerator Victory()
@@ -71,6 +77,25 @@ public class GameManager : MonoBehaviour
             if (!string.IsNullOrEmpty(nextSceneName))
                 SceneTransitioner.Instance.LoadSceneWithTransition(nextSceneName);
         }
+    }
+
+    // for debugging purposes (i can't beat stage 1 but i'll keep trying)
+    public void DebugWin() => StartCoroutine(Victory());
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void RestartStage()
+    {
+        Time.timeScale = 1f;
+        SceneTransitioner.Instance.LoadSceneWithTransition(SceneManager.GetActiveScene().name);
     }
 
     public void GameOver()

@@ -166,6 +166,16 @@ public class AudioManager : MonoBehaviour
         sfxSource.Stop();
     }
 
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        musicSource.UnPause();
+    }
+
     public void SetMusicVolume(float volume)
     {
         musicSource.volume = volume;
