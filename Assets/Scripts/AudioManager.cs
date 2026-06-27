@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip alarmSound;
     public static AudioManager Instance;
 
     [System.Serializable]
@@ -144,6 +145,10 @@ public class AudioManager : MonoBehaviour
         musicSource.volume = targetVol;
     }
 
+    public void PlayAlarm()
+    {
+        PlayAudio(alarmSound);
+    }
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);

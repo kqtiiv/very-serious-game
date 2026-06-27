@@ -1,0 +1,28 @@
+0.0 setactive true
+1.0 R move
+
+5.0 R bite
+9.0 R bite
+
+11.0 R bite
+
+15.0 R bite
+
+21.0 R sweep
+23.0 R move
+26.0 R sweep
+
+29.0 R bite
+31.0 R bite
+
+34.0 R sweep
+36.0 R move
+
+40.0 R bite
+
+47.0 R sweep
+49.0 R move
+
+51.0 R bite
+53.0 R bite
+55.0 R bite

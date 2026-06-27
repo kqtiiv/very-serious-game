@@ -1,0 +1,29 @@
+0.0 setactive true
+1.0 L move
+
+3.0 L bite
+
+7.0 L sweep
+9.0 L move
+
+13.0 L bite
+15.0 L bite
+18.0 L bite
+
+24.0 L bite
+
+28.0 L bite
+
+33.0 L bite
+35.0 L bite
+36.0 L sweep
+38.0 L move
+
+42.0 L bite
+44.0 L sweep
+46.0 L move
+
+
+50.0 L bite
+52.0 L bite
+54.0 L bite

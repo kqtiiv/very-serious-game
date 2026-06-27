@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         if (currentTime >= endTime)
         {
-            Victory();
+            StartCoroutine(Victory());
             return;
         }
 
@@ -53,19 +54,23 @@ public class GameManager : MonoBehaviour
         roomLight.intensity = Mathf.Lerp(startIntensity, endIntensity, t);
     }
 
-    public void Victory()
+    public IEnumerator Victory()
     {
-        if (gameEnded) return;
-        gameEnded = true;
+        if (!gameEnded)
+        {
+            gameEnded = true;
+            AudioManager.Instance.PlayAlarm();
+            yield return new WaitForSeconds(3f);
+            AudioManager.Instance.StopAudio();
+            // save so player doesnt have to start again if died
+            PlayerPrefs.SetInt("StageUnlocked_" + (stageIndex + 1), 1);
+            PlayerPrefs.Save();
 
-        // save so player doesnt have to start again if died
-        PlayerPrefs.SetInt("StageUnlocked_" + (stageIndex + 1), 1);
-        PlayerPrefs.Save();
+            Debug.Log($"Stage {stageIndex + 1} unlocked");
 
-        Debug.Log($"Stage {stageIndex + 1} unlocked");
-
-        if (!string.IsNullOrEmpty(nextSceneName))
-            SceneTransitioner.Instance.LoadSceneWithTransition(nextSceneName);
+            if (!string.IsNullOrEmpty(nextSceneName))
+                SceneTransitioner.Instance.LoadSceneWithTransition(nextSceneName);
+        }
     }
 
     public void GameOver()

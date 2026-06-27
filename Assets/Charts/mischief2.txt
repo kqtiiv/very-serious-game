@@ -1,0 +1,24 @@
+0.0 setactive true
+1.0 M move
+
+4.0 M bite
+
+11.0 M bite
+13.0 M bite
+
+18.0 M bite
+20.0 M bite
+
+24.0 M bite
+
+31.0 M bite
+33.0 M bite
+
+
+40.0 M bite
+41.0 M bite
+
+49.0 M bite
+50.0 M bite
+53.0 M bite
+55.0 M bite

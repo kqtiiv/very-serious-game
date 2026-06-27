@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443d6b771e1e7504999039ce3f39a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  alarmSound: {fileID: 8300000, guid: 0fb76934437c9f44da278e93954a7052, type: 3}
   sceneMusicList:
   - sceneName: Stage1
     vol: 1
