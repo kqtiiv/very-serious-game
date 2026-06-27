@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
             backdropImage = backdrop.GetComponent<Image>();
             SetBackdropAlpha(0f);
         }
+
+        isPaused = false;
     }
 
     private void Update()
@@ -65,8 +67,6 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartStage()
     {
-        isPaused = false;
-        Time.timeScale = 1f;
         SceneTransitioner.Instance.LoadSceneWithTransition(SceneManager.GetActiveScene().name);
     }
 

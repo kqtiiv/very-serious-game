@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         realSecondsToFinish = AudioManager.Instance.SongLength;
         UpdateClock();
     }
@@ -44,6 +45,9 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Victory());
             return;
         }
+
+        if (realSecondsToFinish <= 0f)
+            return;
 
         float hoursPerSecond = (endTime - 3f) / realSecondsToFinish;
 
